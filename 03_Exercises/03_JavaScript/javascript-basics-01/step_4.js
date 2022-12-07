@@ -1,6 +1,9 @@
-var name=prompt("Please enter your name");
-var surname=prompt("please enter your surname");
-var city=prompt("Please enter your city");
+var username=prompt("Please enter your name");
+document.getElementById("name").value = username;
+var lastName=prompt("please enter your surname");
+document.getElementById("surname").value = lastName;
+var cityn=prompt("Please enter your city");
+document.getElementById("city").value = cityn;
 
 
-alert("Name: "+name+"\nSurname:"+surname+"\ncity:"+city);
+alert("Name: "+username+"\nSurname:"+lastName+"\ncity:"+cityn);
