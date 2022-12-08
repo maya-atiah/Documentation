@@ -7,9 +7,7 @@ text.addEventListener('input', updateValue);
 function updateValue(a){
 value.textContent=a.target.value;
 
-
 }
-
 
 
 
