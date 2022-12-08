@@ -1,12 +1,7 @@
-var image;
-image=document.querySelector("#image1");
-image.addEventListener("mouseover",myFunction())
-
-
-
-function myFunction(){
-document.getElementById("demo").addEventListener("mouseover", );
-document.getElementById("demo").addEventListener("mouseout", mouseOut);
-document.getElementById("demo").addEventListener("mouseover", mouseOver);
-document.getElementById("demo").addEventListener("mouseover", mouseOver);
-}
+   document.addEventListener("mouseover",function(){
+    document.getElementById("image1").src = "images/image1_2.jpg";
+    document.getElementById("image2").src = "images/image2_2.jpg";
+    document.getElementById("image3").src = "images/image3_2.jbg";
+    document.getElementById("image4").src = "images/image4_2.jpg";
+    document.getElementById("image5").src = "images/image5_2.jpg";
+})
