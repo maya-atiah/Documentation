@@ -65,3 +65,25 @@ where Role='Graphic Designer'
 
 
 
+18.Find the person with the highest number of points in students
+select name 
+from students 
+where Points=(select max(Points) From students)
+
+19.Find the average of points in students
+select Avg(Points) 
+from students
+
+20.Find the number of students that have 500 points
+select count(name) as count
+from students where Points=500
+
+21.Find the names of students that contains 's'
+select name 
+from students 
+where name like '%s%'
+
+22.Find all students based on the decreasing order of their points:
+select name
+from students order by Points desc
+
