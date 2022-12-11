@@ -48,4 +48,20 @@ DELETE FROM students WHERE name='Layal';
 
 
 
+14.Produce a table that contains, for each employee, his/her name, company name, and company date.
+select employees.name,companies.name as company,companies.date 
+from companies,employees
+where companies.name=employees.company
+
+15.Find the name of employees that work in companies made before 2000.
+select employees.name 
+from companies,employees 
+where companies.name=employees.company and companies.date<2000
+
+16.Find the name of company that has a graphic designer.
+select company 
+from employees 
+where Role='Graphic Designer'
+
+
 
