@@ -32,6 +32,19 @@
   where name='Alex'
 
 
+10.Copy Layals data from students to graduates:
+INSERT INTO graduates
+SELECT ID,Name,Age,Gender,Points,null
+FROM students 
+where Name='Layal';
+
+11.Add the graduation date previously mentioned to Layals record in graduates:
+UPDATE graduates
+SET Graduation='08/09/2018'
+WHERE name='Layal';
+
+12.Remove Layals record from students:
+DELETE FROM students WHERE name='Layal';
 
 
 
