@@ -19,7 +19,10 @@ function startApp(name){
 
 
 /**
- * Decides what to do depending on the data that was received
+ * Decides what to d const help=[hello,quit,exit];
+ help.forEach(element=>{
+   console.log(element);
+ });o depending on the data that was received
  * This function receives the input sent by the user.
  * 
  * For example, if the user entered 
@@ -43,10 +46,18 @@ function onDataReceived(text) {
   else if(text==='exit\n'){
     exit();
   }
+  else if(text==='help\n'){
+    const help=["hello","quit","exit"];
+    help.forEach(element=>{
+      console.log(element);
+    });
+    
+  }
   else{
     unknownCommand(text);
   }
 }
+
 
 
 /**
@@ -71,6 +82,7 @@ function hello(){
 }
 
 
+
 /**
  * Exits the application
  *
@@ -81,12 +93,13 @@ function quit(){
   process.exit();
 }
 
-
-
 function exit(){
- console.log('Exiting now, goodbye!')
- process.exit();
-}
+  console.log('Exiting now, goodbye!')
+  process.exit();
+ }
+ 
 
+ 
 // The following line starts the application
 startApp("Maya Atiah")
+
