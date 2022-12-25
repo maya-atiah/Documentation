@@ -47,10 +47,7 @@ function onDataReceived(text) {
     exit();
   }
   else if(text==='help\n'){
-    const help=["hello","quit","exit"];
-    help.forEach(element=>{
-      console.log(element);
-    });
+   help();
     
   }
   else{
@@ -82,7 +79,24 @@ function hello(){
 }
 
 
+/**
+ * Help function
+ */
+function help(){
+ const help=["hello","quit","exit"];
+    help.forEach(element=>{
+      if(element==="quit"){
+        console.log("To quit the app : ");
+      console.log(element);}
+      else if(element==="hello"){
+        console.log("Says hello : ");
+      console.log(element);}
+      else if(element==="exit"){
+        console.log("To exit the app :");
+      console.log(element);}
 
+    });
+  }
 /**
  * Exits the application
  *
