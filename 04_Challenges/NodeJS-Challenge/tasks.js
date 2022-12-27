@@ -50,8 +50,10 @@ function onDataReceived(text) {
    help();
     
   }
-  else if (text.slice(0, 5) === "hello") {
+ 
+  else if (text.slice(0, 5) === "hello" ) {
     hello(text.replace(/ /g, "").slice(5).trim());}
+  
 
   else{
     unknownCommand(text)
@@ -77,6 +79,8 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
+
+
  function hello(name) {
   var newname = "";
   if (name != "") {
@@ -84,7 +88,10 @@ function unknownCommand(c){
     newname += name;
   }
   console.log("hello" + newname + "!");
+  
+ 
 }
+
 
 
 /**
@@ -97,8 +104,8 @@ function help(){
         console.log("To quit the app : ");
       console.log(element);}
       else if(element==="hello"){
-        console.log("Says hello : ");
-      console.log(element);}
+        console.log("Says hello name! : ");
+      console.log(element+ " name");}
       else if(element==="exit"){
         console.log("To exit the app :");
       console.log(element);}
