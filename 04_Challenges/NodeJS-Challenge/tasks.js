@@ -101,13 +101,13 @@ function help(){
  const help=["hello","quit","exit"];
     help.forEach(element=>{
       if(element==="quit"){
-        console.log("To quit the app : ");
+        console.log("- To quit the app : ");
       console.log(element);}
       else if(element==="hello"){
-        console.log("Says hello name! : ");
+        console.log("- Says hello name! : ");
       console.log(element+ " name");}
       else if(element==="exit"){
-        console.log("To exit the app :");
+        console.log("- To exit the app :");
       console.log(element);}
 
     });
