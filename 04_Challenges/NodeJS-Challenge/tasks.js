@@ -9,7 +9,7 @@
  * @param  {string} name the name of the app
  * @returns {void}
  */
-function startApp(name){
+function startApp(name) {
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', onDataReceived);
@@ -37,25 +37,26 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === 'quit\n') {
+  if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
+  else if (text === 'hello\n') {
     hello();
   }
-  else if(text==='exit\n'){
-    exit();
-  }
-  else if(text==='help\n'){
-   help();
-    
-  }
- 
-  else if (text.slice(0, 5) === "hello" ) {
-    hello(text.replace(/ /g, "").slice(5).trim());}
-  
 
-  else{
+  else if (text === 'help\n') {
+    help();
+
+  }
+
+  else if (text.slice(0, 5) === "hello") {
+    hello(text.replace(/ /g, "").slice(5).trim());
+  }
+
+  else if (text === 'list\n') {
+    list();
+  }
+  else {
     unknownCommand(text)
   }
 }
@@ -69,8 +70,8 @@ function onDataReceived(text) {
  * @param  {string} c the text received
  * @returns {void}
  */
-function unknownCommand(c){
-  console.log('unknown command: "'+c.trim()+'"')
+function unknownCommand(c) {
+  console.log('unknown command: "' + c.trim() + '"')
 }
 
 
@@ -81,15 +82,15 @@ function unknownCommand(c){
  */
 
 
- function hello(name) {
+function hello(name) {
   var newname = "";
   if (name != "") {
     newname = " ";
     newname += name;
   }
   console.log("hello" + newname + "!");
-  
- 
+
+
 }
 
 
@@ -97,42 +98,53 @@ function unknownCommand(c){
 /**
  * Help function
  */
-function help(){
- const help=["hello","quit","exit"];
-    help.forEach(element=>{
-      if(element==="quit"){
-        console.log("- To quit the app : ");
-      console.log(element);}
-      else if(element==="hello"){
-        console.log("- Says hello name! : ");
-      console.log(element+ " name");}
-      else if(element==="exit"){
-        console.log("- To exit the app :");
-      console.log(element);}
+function help() {
+  const help = ["hello", "quit", "exit"];
+  help.forEach(element => {
+    if (element === "quit") {
+      console.log("- To quit the app : ");
+      console.log(element);
+    }
+    else if (element === "hello") {
+      console.log("- Says hello name! : ");
+      console.log(element + " name");
+    }
+    else if (element === "exit") {
+      console.log("- To exit the app :");
+      console.log(element);
+    }
 
-    });
-  }
+  });
+}
 
 
 
-  
+
 /**
  * Exits the application
  *
  * @returns {void}
  */
-function quit(){
+function quit() {
   console.log('Quitting now, goodbye!')
   process.exit();
 }
 
-function exit(){
-  console.log('Exiting now, goodbye!')
-  process.exit();
- }
- 
 
- 
+
+//List
+const tasks = [
+  "Go to the university",
+  "Finish assignments",
+  "Sleep"
+]
+
+//List function
+function list(){
+  for(let i=0; i<tasks.length; i++)
+    console.log((i+1)+"- "+tasks[i]);
+}
+
 // The following line starts the application
 startApp("Maya Atiah")
 
